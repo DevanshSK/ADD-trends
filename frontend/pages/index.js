@@ -1,7 +1,17 @@
 import Head from "next/head";
-import Link from "next/link";
+import { useQuery } from "urql";
+import { PRODUCT_QUERY } from "../lib/query";
 
 export default function Home() {
+  // Fetch Products from strapi
+  const [results] = useQuery({ query: PRODUCT_QUERY });
+  console.log(results);
+  const { data, fetching, error } = results;
+
+  // Check for the data
+  if (fetching) return <h1>Loading......</h1>;
+  if (error) return <p>Oh nooo, {error.message}...</p>;
+
   return (
     <div>
       <Head>
