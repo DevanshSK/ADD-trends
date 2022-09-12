@@ -1,3 +1,5 @@
+import { ProductStyle } from "../styles/ProductStyle";
+
 export default function Product({ key, product }) {
   // Extract the info from props
   console.log(product);
@@ -5,12 +7,12 @@ export default function Product({ key, product }) {
   console.log(key);
 
   return (
-    <div>
+    <ProductStyle>
       <div>
         <img src={image.data.attributes.formats.small.url} alt="" />
       </div>
       <h2>{title}</h2>
       <h3>₹{price}</h3>
-    </div>
+    </ProductStyle>
   );
 }
