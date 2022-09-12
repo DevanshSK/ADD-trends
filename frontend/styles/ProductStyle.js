@@ -12,6 +12,7 @@ export const ProductStyle = styled.div`
     cursor: pointer;
     aspect-ratio: 1/1;
     object-fit: cover;
+    object-position: center center;
   }
   h2 {
     padding: 0.5rem 0rem;

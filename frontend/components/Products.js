@@ -1,10 +1,8 @@
 import { ProductStyle } from "../styles/ProductStyle";
 
-export default function Product({ key, product }) {
+export default function Product({ product }) {
   // Extract the info from props
-  console.log(product);
   const { title, price, image } = product.attributes;
-  console.log(key);
 
   return (
     <ProductStyle>

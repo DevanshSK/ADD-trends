@@ -14,7 +14,6 @@ export default function Home() {
   if (error) return <p>Oh nooo, {error.message}...</p>;
 
   const products = data.products.data;
-  console.log(products);
 
   return (
     <div>
@@ -26,7 +25,6 @@ export default function Home() {
 
       <main>
         <h1>Welcome to ADD Trends</h1>
-        <h1>View our products line..</h1>
 
         <Gallery>
           {products.map((product) => (
