@@ -8,8 +8,13 @@ import {
   Buy,
 } from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+//Example
+import { useShopContext } from "../../lib/context";
 
 export default function ProductDetails() {
+  // Use state
+  const { qty, increaseQty, decreaseQty } = useShopContext();
+
   // Fetch Slug
   const { query } = useRouter();
 
@@ -37,11 +42,11 @@ export default function ProductDetails() {
         <Quantity>
           <span>Quantity</span>
           <button>
-            <AiFillMinusCircle />
+            <AiFillMinusCircle onClick={decreaseQty} />
           </button>
-          <p>0</p>
+          <p>{qty}</p>
           <button>
-            <AiFillPlusCircle />
+            <AiFillPlusCircle onClick={increaseQty} />
           </button>
         </Quantity>
         <Buy>Add to Cart</Buy>
