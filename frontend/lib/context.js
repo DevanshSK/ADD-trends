@@ -21,9 +21,34 @@ export const StateContext = ({ children }) => {
     });
   };
 
+  // Add product to cart
+  const onAdd = (product, quantity) => {
+    // Check if the product is already is in the cart
+    const exist = cartItems.find((item) => item.slug === product.slug);
+    if (exist) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.slug === product.slug
+            ? { ...exist, quantity: exist.quantity + quantity }
+            : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: quantity }]);
+    }
+  };
   return (
     <ShopContext.Provider
-      value={{ qty, increaseQty, decreaseQty, showCart, setShowCart }}
+      value={{
+        qty,
+        increaseQty,
+        decreaseQty,
+        showCart,
+        setShowCart,
+        cartItems,
+        setCartItems,
+        onAdd,
+      }}
     >
       {children}
     </ShopContext.Provider>
