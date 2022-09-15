@@ -55,4 +55,4 @@ export const StateContext = ({ children }) => {
   );
 };
 
-export const useShopContext = () => useContext(ShopContext);
+export const useStateContext = () => useContext(ShopContext);

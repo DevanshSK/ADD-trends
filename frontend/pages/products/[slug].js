@@ -9,11 +9,11 @@ import {
 } from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 //Example
-import { useShopContext } from "../../lib/context";
+import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
   // Use state
-  const { qty, increaseQty, decreaseQty, onAdd } = useShopContext();
+  const { qty, increaseQty, decreaseQty, onAdd } = useStateContext();
 
   // Fetch Slug
   const { query } = useRouter();
