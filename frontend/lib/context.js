@@ -8,6 +8,8 @@ export const StateContext = ({ children }) => {
   const [qty, setQty] = useState(1);
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [totalQuantities, setTotalQuantities] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   // State functions
   // Increase product qty
@@ -23,6 +25,10 @@ export const StateContext = ({ children }) => {
 
   // Add product to cart
   const onAdd = (product, quantity) => {
+    //Increase total price
+    setTotalPrice((prevTotal) => prevTotal + product.price * quantity);
+    // Increase totalQuantities
+    setTotalQuantities((prevTotal) => prevTotal + quantity);
     // Check if the product is already is in the cart
     const exist = cartItems.find((item) => item.slug === product.slug);
     if (exist) {
@@ -40,6 +46,10 @@ export const StateContext = ({ children }) => {
 
   // Remove items
   const onRemove = (product) => {
+    //Devrease total price
+    setTotalPrice((prevTotal) => prevTotal - product.price);
+    // Decreses totalQuantities
+    setTotalQuantities((prevTotal) => prevTotal - 1);
     // Check if the product is already is in the cart
     const exist = cartItems.find((item) => item.slug === product.slug);
     if (exist.quantity == 1) {
@@ -67,6 +77,8 @@ export const StateContext = ({ children }) => {
         setCartItems,
         onAdd,
         onRemove,
+        totalQuantities,
+        totalPrice,
       }}
     >
       {children}

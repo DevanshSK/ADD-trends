@@ -70,3 +70,14 @@ export const EmptyDiv = styled.div`
     color: var(--secondary);
   }
 `;
+
+export const Checkout = styled.div`
+  button {
+    background: var(--primary);
+    padding: 1em 1rem;
+    width: 100%;
+    margin: 1rem 0rem;
+    color: white;
+    cursor: pointer;
+  }
+`;
