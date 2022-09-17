@@ -2,19 +2,35 @@ import styled from "styled-components";
 
 export const DetailsStyled = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 5rem;
-  margin-top: 5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   img {
-    width: 40%;
+    width: 45%;
+    flex-grow: 1;
+    flex-shrink: 1;
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center center;
+  }
+  @media screen and (max-width: 800px) {
+    gap: 2rem;
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
+    .product-info {
+      width: 100%;
+    }
   }
 `;
 
 export const ProductInfo = styled.div`
   width: 40%;
+  flex-grow: 1;
+  flex-shrink: 1;
   button {
     font-size: 1rem;
     font-weight: medium;
@@ -59,4 +75,5 @@ export const Buy = styled.button`
   background: var(--primary);
   color: white;
   font-weight: 500;
+  margin-bottom: 3rem;
 `;

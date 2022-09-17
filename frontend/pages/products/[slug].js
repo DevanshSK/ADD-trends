@@ -37,7 +37,7 @@ export default function ProductDetails() {
   return (
     <DetailsStyled>
       <img src={image.data.attributes.formats.medium.url} alt={title} />
-      <ProductInfo>
+      <ProductInfo className="product-info">
         <Title>{title}</Title>
         <p>{description}</p>
         <Price>₹{price}</Price>

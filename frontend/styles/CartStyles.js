@@ -20,6 +20,12 @@ export const CartStyle = styled.div`
   padding: 2rem 5rem;
   overflow-y: scroll;
   position: relative;
+  @media screen and (max-width: 800px) {
+    min-width: 100%;
+  }
+  @media screen and (max-width: 580px) {
+    padding: 2rem;
+  }
 `;
 
 export const Card = styled.div`
@@ -39,6 +45,13 @@ export const Card = styled.div`
     object-fit: cover;
     object-position: center center;
   }
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 export const CardInfo = styled.div`
@@ -50,6 +63,7 @@ export const CardInfo = styled.div`
 `;
 
 export const EmptyDiv = styled.div`
+  z-index: 10;
   position: absolute;
   top: 0;
   left: 50%;
@@ -79,5 +93,14 @@ export const Checkout = styled.div`
     margin: 1rem 0rem;
     color: white;
     cursor: pointer;
+  }
+`;
+export const CloseCart = styled.div`
+  z-index: 99;
+  svg {
+    font-size: 1.5rem;
+  }
+  @media screen and (min-width: 800px) {
+    display: none;
   }
 `;

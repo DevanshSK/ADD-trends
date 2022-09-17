@@ -26,7 +26,7 @@ export const NavItems = styled.div`
   }
   h3 {
     font-size: 1rem;
-    padding: 0.25rem;
+    padding: 0rem 0.25rem;
   }
   svg {
     font-size: 1.2rem;
