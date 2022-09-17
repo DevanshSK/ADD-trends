@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const DetailsStyled = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 5rem;
   margin-top: 5rem;
   img {
     width: 40%;
@@ -21,17 +22,25 @@ export const ProductInfo = styled.div`
     cursor: pointer;
   }
 `;
+export const Price = styled.h2`
+  margin: 0.5rem 0rem;
+`;
+export const Title = styled.h2`
+  margin-bottom: 0.5rem;
+`;
 
 export const Quantity = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem 0rem;
+  /* gap: 0.5rem; */
 
   button {
     background: transparent;
     border: none;
     display: flex;
     font-size: 1.15rem;
+    padding: 0rem 1rem;
   }
   p {
     width: 1rem;

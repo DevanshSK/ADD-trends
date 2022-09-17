@@ -6,6 +6,8 @@ import {
   ProductInfo,
   Quantity,
   Buy,
+  Price,
+  Title,
 } from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 //Example
@@ -30,14 +32,15 @@ export default function ProductDetails() {
   if (error) return <p>Oh nooo, {error.message}...</p>;
 
   // Extract the data
-  const { title, description, image } = data.products.data[0].attributes;
+  const { title, description, image, price } = data.products.data[0].attributes;
 
   return (
     <DetailsStyled>
       <img src={image.data.attributes.formats.medium.url} alt={title} />
       <ProductInfo>
-        <h3>{title}</h3>
+        <Title>{title}</Title>
         <p>{description}</p>
+        <Price>₹{price}</Price>
 
         <Quantity>
           <span>Quantity</span>

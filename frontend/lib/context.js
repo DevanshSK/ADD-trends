@@ -37,6 +37,24 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, { ...product, quantity: quantity }]);
     }
   };
+
+  // Remove items
+  const onRemove = (product) => {
+    // Check if the product is already is in the cart
+    const exist = cartItems.find((item) => item.slug === product.slug);
+    if (exist.quantity == 1) {
+      setCartItems(cartItems.filter((item) => item.slug !== product.slug));
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.slug === product.slug
+            ? { ...exist, quantity: exist.quantity - 1 }
+            : item
+        )
+      );
+    }
+  };
+
   return (
     <ShopContext.Provider
       value={{
@@ -48,6 +66,7 @@ export const StateContext = ({ children }) => {
         cartItems,
         setCartItems,
         onAdd,
+        onRemove,
       }}
     >
       {children}

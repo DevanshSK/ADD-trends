@@ -14,7 +14,8 @@ export const CartWrapper = styled.div`
 `;
 
 export const CartStyle = styled.div`
-  width: 50%;
+  /* width: 50%; */
+  min-width: 40rem;
   background: #f1f1f1;
   padding: 2rem 5rem;
   overflow-y: scroll;
@@ -31,6 +32,7 @@ export const Card = styled.div`
   background: white;
   padding: 2rem;
   margin: 2rem 0rem;
+  /* max-width: 30rem; */
   img {
     width: 8rem;
     aspect-ratio: 1/1;
@@ -58,7 +60,6 @@ export const EmptyDiv = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-
   h1 {
     font-size: 1.6rem;
     padding: 2rem;
@@ -69,5 +70,3 @@ export const EmptyDiv = styled.div`
     color: var(--secondary);
   }
 `;
-
-export const Quantity = styled.div``;
