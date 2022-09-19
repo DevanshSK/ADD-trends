@@ -21,13 +21,29 @@ export default function Cart() {
     useStateContext();
 
   return (
-    <CartWrapper onClick={() => setShowCart(false)}>
-      <CartStyle onClick={(e) => e.stopPropagation()}>
+    <CartWrapper
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setShowCart(false)}
+    >
+      <CartStyle
+        animate={{ x: "0%" }}
+        initial={{ x: "50%" }}
+        exit={{ x: "50%" }}
+        transition={{ type: "tween" }}
+        onClick={(e) => e.stopPropagation()}
+      >
         <CloseCart>
           <AiOutlineClose onClick={() => setShowCart(false)} />
         </CloseCart>
         {cartItems.length < 1 && (
-          <EmptyDiv onClick={() => setShowCart(false)}>
+          <EmptyDiv
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            onClick={() => setShowCart(false)}
+          >
             <h1>You have more shopping to do 😉</h1>
             <FaShoppingCart />
           </EmptyDiv>
@@ -35,7 +51,12 @@ export default function Cart() {
         {cartItems.length >= 1 &&
           cartItems.map((item) => {
             return (
-              <Card key={item.slug}>
+              <Card
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+                key={item.slug}
+              >
                 <img
                   src={item.image.data.attributes.formats.small.url}
                   alt={item.title}

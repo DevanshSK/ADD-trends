@@ -1,6 +1,8 @@
 import styled from "styled-components";
+// Animations
+import { motion } from "framer-motion";
 
-export const CartWrapper = styled.div`
+export const CartWrapper = styled(motion.div)`
   position: fixed;
   right: 0;
   top: 0;
@@ -13,7 +15,7 @@ export const CartWrapper = styled.div`
   /* display: none; */
 `;
 
-export const CartStyle = styled.div`
+export const CartStyle = styled(motion.div)`
   /* width: 50%; */
   min-width: 40rem;
   background: #f1f1f1;
@@ -28,7 +30,7 @@ export const CartStyle = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -54,7 +56,7 @@ export const Card = styled.div`
   }
 `;
 
-export const CardInfo = styled.div`
+export const CardInfo = styled(motion.div)`
   width: 50%;
   div {
     display: flex;
@@ -62,12 +64,12 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const EmptyDiv = styled.div`
+export const EmptyDiv = styled(motion.div)`
   z-index: 10;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  /* left: 50%; */
+  /* transform: translate(-50%, 0%); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +78,7 @@ export const EmptyDiv = styled.div`
   width: 100%;
   h1 {
     font-size: 1.6rem;
-    padding: 2rem;
+    padding: 2rem 0;
   }
 
   svg {
@@ -85,7 +87,7 @@ export const EmptyDiv = styled.div`
   }
 `;
 
-export const Checkout = styled.div`
+export const Checkout = styled(motion.div)`
   button {
     background: var(--primary);
     padding: 1em 1rem;
@@ -95,7 +97,7 @@ export const Checkout = styled.div`
     cursor: pointer;
   }
 `;
-export const CloseCart = styled.div`
+export const CloseCart = styled(motion.div)`
   z-index: 99;
   svg {
     font-size: 1.5rem;
@@ -104,3 +106,5 @@ export const CloseCart = styled.div`
     display: none;
   }
 `;
+
+export const Cards = styled(motion.div)``;
