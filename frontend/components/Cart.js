@@ -16,6 +16,7 @@ import {
   AiFillMinusCircle,
   AiOutlineClose,
 } from "react-icons/ai";
+import getStripe from "../lib/getStripe";
 
 // Animation Variants
 const card = {
@@ -29,6 +30,18 @@ const cards = {
     scale: 1,
     transition: { delayChildren: 0.4, staggerChildren: 0.1 },
   },
+};
+
+//Payments
+const handleCheckout = async () => {
+  const stripe = await getStripe();
+  const response = await fetch("/api/stripe", {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(cartItems),
+  });
+  const data = await response.json();
+  await stripe.redirectToCheckout({ sessionID: data.id });
 };
 
 export default function Cart() {
@@ -94,7 +107,7 @@ export default function Cart() {
         {cartItems.length >= 1 && (
           <Checkout>
             <h2>Subtotal: ₹{totalPrice}</h2>
-            <button>Purchase</button>
+            <button onClick={handleCheckout}>Purchase</button>
           </Checkout>
         )}
       </CartStyle>
