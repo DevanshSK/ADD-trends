@@ -1,7 +1,0 @@
-Instructions to start Strapi server
-- Install nodejs on pc
-- Download this repository
-- Open backend folder in VSCode
-- Then Open the terminal and type this command
-      npm run develop
-- Then login with your details provided on your whatsapp
