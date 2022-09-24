@@ -107,7 +107,8 @@ export default function Cart() {
         {cartItems.length >= 1 && (
           <Checkout>
             <h2>Subtotal: ₹{totalPrice}</h2>
-            <button onClick={handleCheckout}>Purchase</button>
+            {/* <button onClick={handleCheckout}>Purchase</button> */}
+            <button>Purchase</button>
           </Checkout>
         )}
       </CartStyle>
